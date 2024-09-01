@@ -22,6 +22,8 @@ services:
       - "8080:8080"
     environment:
       - TZ=Asia/Taipei
+    volumes:
+      - /home/ubuntu/application.properties:/app/src/main/resources/application.properties
 
 networks:
   calendar:
