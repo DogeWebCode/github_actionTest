@@ -5,7 +5,6 @@ services:
     networks:
       - calendar
     ports:
-      - "5173:80"
       - "5173:443"
     environment:
       - TZ=Asia/Taipei
