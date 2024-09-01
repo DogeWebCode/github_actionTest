@@ -8,7 +8,7 @@ services:
       - "5173:80"
       - "5173:443"
     environment:
-      - TZ: Asia/Taipei
+      - TZ=Asia/Taipei
     depends_on:
       - backend
     volumes:
@@ -22,7 +22,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - TZ: Asia/Taipei
+      - TZ=Asia/Taipei
 
 networks:
   calendar:
