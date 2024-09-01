@@ -23,5 +23,5 @@ jobs:
             docker pull james66689/wits_calendar_frontend:latest
 
             cd /home/ubuntu
-
+            docker-compose stop
             docker-compose up -d
