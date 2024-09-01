@@ -1,0 +1,39 @@
+{
+  "name": "witscalendar-fontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "@bwobbones/fullcalendar5-rightclick": "^1.1.1",
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/list": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
+    "@fullcalendar/vue3": "^6.1.15",
+    "axios": "^1.7.5",
+    "date-fns": "^3.6.0",
+    "element-plus": "^2.8.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue": "^3.4.29",
+    "vue-context": "^6.0.0",
+    "vue-router": "^4.3.3",
+    "vue3-google-login": "^2.0.33"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.3.1"
+  }
+}

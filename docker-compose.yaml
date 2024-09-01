@@ -1,0 +1,22 @@
+services:
+  frontend:
+    build: WitsCalendar_Fontend/
+    container_name: frontend
+    networks:
+      - calendar
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+  backend:
+    build: .
+    container_name: backend
+    networks:
+      - calendar
+    ports:
+      - "8080:8080"
+
+networks:
+  calendar:
+    driver: bridge
+
