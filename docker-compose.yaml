@@ -23,7 +23,7 @@ services:
     environment:
       - TZ=Asia/Taipei
     volumes:
-      - /home/ubuntu/application.properties:/app/src/main/resources/application.properties
+      - /home/ubuntu/application.properties:/app/application.properties
 
 networks:
   calendar:
