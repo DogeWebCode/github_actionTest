@@ -1,22 +1,29 @@
 services:
   frontend:
-    build: WitsCalendar_Fontend/
+    image: james66689/wits_calendar_frontend:latest
     container_name: frontend
     networks:
       - calendar
     ports:
       - "5173:80"
+      - "5173:443"
+    environment:
+      - TZ: Asia/Taipei
     depends_on:
       - backend
+    volumes:
+      - /home/ubuntu/ssl/certificate.crt:/etc/nginx/ssl/certificate.crt
+      - /home/ubuntu/ssl/private.key:/etc/nginx/ssl/private.key
   backend:
-    build: .
+    image: james66689/wits_calendar_backend:latest
     container_name: backend
     networks:
       - calendar
     ports:
       - "8080:8080"
+    environment:
+      - TZ: Asia/Taipei
 
 networks:
   calendar:
     driver: bridge
-
