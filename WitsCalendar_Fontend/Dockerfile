@@ -11,7 +11,7 @@ RUN npm run build
 FROM nginx:1.18
 
 RUN rm /etc/nginx/conf.d/default.conf
-RUN mkdir /app/nginx
+RUN mkdir /etc/nginx/log
 RUN echo "server { \
     listen 80; \
     server_name hsu.world; \
@@ -36,8 +36,8 @@ server { \
         proxy_set_header Authorization \$http_authorization; \
     } \
     error_page 404 /index.html; \
-    access_log /app/nginx/hsu.world.access.log; \
-    error_log /app/nginx/hsu.world.error.log; \
+    access_log /etc/nginx/log/hsu.world.access.log; \
+    error_log /etc/nginx/log/hsu.world.error.log; \
 }" > /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /app/dist /usr/share/nginx/html
