@@ -20,7 +20,7 @@ RUN echo "server { \
 server { \
     listen 443 ssl; \
     server_name hsu.world; \
-    root /home/ubuntu/dist; \
+    root /usr/share/nginx/html; \
     index index.html; \
     ssl_certificate /etc/nginx/ssl/certificate.crt; \
     ssl_certificate_key /etc/nginx/ssl/private.key; \
