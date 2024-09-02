@@ -11,6 +11,7 @@ RUN npm run build
 FROM nginx:1.18
 
 RUN rm /etc/nginx/conf.d/default.conf
+RUN mkdir /app/nginx
 RUN echo "server { \
     listen 80; \
     server_name hsu.world; \
