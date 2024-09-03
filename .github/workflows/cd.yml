@@ -23,7 +23,7 @@ jobs:
       - name: SSH to EC2 and deploy
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ matrix.ec2_instance == 1 && env.EC2_HOST_1 || matrix.ec2_instance == 2 && env.EC2_HOST_2 || env.EC2_HOST_3 }}
+          host: ${{matrix.ec2_instance == 1 && env.EC2_HOST_1}}
           username: ${{env.EC2_USER}}
           key: ${{secrets.EC2_SSH_KEY}}
           port: 22
