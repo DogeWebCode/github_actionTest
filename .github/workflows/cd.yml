@@ -35,8 +35,8 @@ jobs:
             docker pull james66689/wits_calendar_backend:latest
 
             if ["$(docker ps -q -f name=wits-calendar-backend)"]; then
-                docker stop backend
-                docker rm backend
+                docker stop wits-calendar-backend
+                docker rm wits-calendar-backend
             fi
 
             docker run -d \
