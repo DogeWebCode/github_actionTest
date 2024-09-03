@@ -51,16 +51,17 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Build frontend Docker image
-        run: |
-          docker build -t james66689/wits_calendar_frontend:latest -f ./WitsCalendar_Fontend/Dockerfile ./WitsCalendar_Fontend
+      - name: Install dependencies
+        run: npm install
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
+      - name: Bulid Vue.js project
+        run: npm run build
+
+      - name: Upload to S3
+        uses: shallwefootball/s3-upload-action@master
+        id: S3
         with:
-          username: ${{secrets.DOCKERHUB_USERNAME}}
-          password: ${{secrets.DOCKERHUB_PASSWORD}}
-
-      - name: Push frontend Docker image
-        run: |
-          docker push james66689/wits_calendar_frontend:latest
+          aws_key_id: ${{secrets.AWS_KEY_ID}}
+          aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: wits-calendar
+          source_dir: ./WitsCalendar_Fontend
