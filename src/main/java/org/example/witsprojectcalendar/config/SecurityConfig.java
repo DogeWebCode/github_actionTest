@@ -22,6 +22,7 @@ public class SecurityConfig {
             .csrf(AbstractHttpConfigurer::disable)
             .sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests((requests) -> requests
+                .requestMatchers("/").permitAll()
                 .anyRequest().authenticated())
             .addFilterBefore(new GoogleAccessTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 

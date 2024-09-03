@@ -63,4 +63,11 @@ public class CalendarController {
 
         return ResponseEntity.ok(updateEvent);
     }
+
+    //used for heartbeat mechanism
+
+    @GetMapping("/")
+    public ResponseEntity<?> heartBeat() {
+        return ResponseEntity.ok("healthy");
+    }
 }
