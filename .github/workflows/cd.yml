@@ -41,7 +41,6 @@ jobs:
 
             docker run -d \
               --name wits-calendar-backend \
-              --network calendar \
               -p 8080:8080 \
               -e TZ=Asia/Taipei \
               -v /home/ubuntu/application.properties:/app/application.properties \
